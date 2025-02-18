@@ -12,6 +12,8 @@
 - ド田舎でWEB上の情報が少ない場合も住所などの出力に誤りが散見された。　
 
 # Gemini 2.0へのアップグレードで緯度経度の出力の精度が向上？
+![image](https://github.com/user-attachments/assets/0b3a44b9-6b65-48c3-ba9a-958be6abfd09)
+
 - [東京ディズニーランドのGoogle MapsのURL](https://www.google.com/maps/search/%E6%9D%B1%E4%BA%AC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89/@35.632897,139.880387,15z?hl=ja)
 - 実務にも応用できる精度になったかもしれない
 
