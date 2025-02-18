@@ -5,6 +5,7 @@
 
 # 関連リンク
 - [Geminiの書き出し先・Google Spreadsheet](https://docs.google.com/spreadsheets/d/1GgazOc_oCEfbLaIj254TpGJrKBNxQc_0IpLC25L78rs/edit?gid=0#gid=0)
+- [Gemini 2.0 Python SDKのアップグレード方法](https://ai.google.dev/gemini-api/docs/migrate?hl=ja&_gl=1*8mvw7x*_up*MQ..*_ga*OTk1MTkzNzcwLjE3Mzk4NzgxOTQ.*_ga_P1DBVKWT6V*MTczOTg3ODE5My4xLjAuMTczOTg3ODE5My4wLjAuMTcwNjc0NzQyOQ..)
 
 # 補足
 - 2024年7月時点では、地名に東京と付く場所の場合、住所が東京都～と出力したり、緯度経度の精度がイマイチだった。
