@@ -5,6 +5,7 @@
 
 # 関連リンク
 - [Geminiの書き出し先・Google Spreadsheet](https://docs.google.com/spreadsheets/d/1GgazOc_oCEfbLaIj254TpGJrKBNxQc_0IpLC25L78rs/edit?gid=0#gid=0)
+- [note Google Colabのチートシート](https://note.com/nepia_infinity/n/n71df2c1c99b2)
 - [Gemini 2.0 Python SDKのアップグレード方法](https://ai.google.dev/gemini-api/docs/migrate?hl=ja&_gl=1*8mvw7x*_up*MQ..*_ga*OTk1MTkzNzcwLjE3Mzk4NzgxOTQ.*_ga_P1DBVKWT6V*MTczOTg3ODE5My4xLjAuMTczOTg3ODE5My4wLjAuMTcwNjc0NzQyOQ..)
 
 # 補足
