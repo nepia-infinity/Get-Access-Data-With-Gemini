@@ -3,6 +3,9 @@
 - Spreadsheetへの書き出しが出来ないかをチェック
 - 実務での応用可能性を探るための実験的スクリプト
 
+# 関連リンク
+- [Geminiの書き出し先・Google Spreadsheet](https://docs.google.com/spreadsheets/d/1GgazOc_oCEfbLaIj254TpGJrKBNxQc_0IpLC25L78rs/edit?gid=0#gid=0)
+
 # 補足
 - 2024年7月時点では、地名に東京と付く場所の場合、住所が東京都～と出力したり、緯度経度の精度がイマイチだった。
 - ド田舎でWEB上の情報が少ない場合も住所などの出力に誤りが散見された。　
