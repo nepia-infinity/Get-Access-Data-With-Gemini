@@ -10,7 +10,6 @@
 
 # 補足
 - 2024年7月時点では、地名に東京と付く場所の場合、住所が東京都～と出力したり、緯度経度の精度がイマイチだった。
-- ド田舎でWEB上の情報が少ない場合も住所などの出力に誤りが散見された。
 - 2025年2月時点でも、田舎だと緯度経度、所要時間共に大幅な狂いがあり実用的ではない。
 - 東京都内であれば、それなりの精度がある印象
 
@@ -18,5 +17,65 @@
 ![image](https://github.com/user-attachments/assets/0b3a44b9-6b65-48c3-ba9a-958be6abfd09)
 
 - [東京ディズニーランドのGoogle MapsのURL](https://www.google.com/maps/search/%E6%9D%B1%E4%BA%AC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89/@35.632897,139.880387,15z?hl=ja)
-- 実務にも応用できる精度になったかもしれない
+
+
+
+# GASでMap Serviceを使用して緯度経度を求める
+- この方法で出力した方が正確な緯度経度を算出できる
+
+``` Javascript
+function setGeoCode() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName('緯度経度出力');
+  const values = sheet.getDataRange().getDisplayValues();
+  // console.log(values);
+
+  const column = {
+    'address': values[0].indexOf('住所'),
+    'latitude': values[0].indexOf('緯度'),
+    'longitude': values[0].indexOf('経度'),
+    'googleMaps': values[0].indexOf('Google Maps Url',)
+  }
+
+  values.forEach((record, index) => {
+    const address = record[column.address];
+    let row = index + 1;
+
+    if ( address && 0 < index ) {
+      console.log(record);
+
+      const obj = getGeoData_(address);
+      console.log(obj);
+
+      sheet.getRange(row, 2, 1, 3).setValues([[obj.latitude, obj.longitude, obj.googleMapsUrl]]);
+    }
+  });
+}
+
+
+
+function getGeoData_(address) {
+  const maps = Maps.newGeocoder()
+  .setLanguage("ja")
+  .geocode(address);
+  console.log(maps);
+
+  const geoData = maps.results[0].geometry;
+  console.log(geoData);
+
+  const latitude  = geoData.location.lat;//緯度
+  const longitude = geoData.location.lng;//経度
+  const common  = 'https://www.google.com/maps/search/';
+  const googleMapsUrl = common + latitude + ',' + longitude;
+
+  console.log(googleMapsUrl);
+
+  return {
+    'latitude': latitude,
+    'longitude': longitude,
+    'googleMapsUrl': googleMapsUrl,
+  }
+}
+
+```
 
