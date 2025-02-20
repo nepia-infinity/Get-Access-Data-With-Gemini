@@ -24,6 +24,9 @@
 - この方法で出力した方が正確な緯度経度を算出できる
 
 ``` Javascript
+/**
+ * @description スプレッドシートの住所データをもとに、緯度・経度・Google Maps URLを取得し、スプレッドシートに書き込む。
+ */
 function setGeoCode() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName('緯度経度出力');
@@ -45,8 +48,8 @@ function setGeoCode() {
     if ( address && 0 < index ) {
       console.log(record);
 
-      const obj = getGeoData_(address);
-      console.log(obj);
+      const obj = getGeoData_(address); // 住所から緯度、経度、Google Maps URLを取得
+      console.log(obj); // { latitude: 緯度, longitude: 経度, googleMapsUrl: Google Maps URL }
 
       sheet.getRange(row, 2, 1, 3).setValues([[obj.latitude, obj.longitude, obj.googleMapsUrl]]);
     }
