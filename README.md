@@ -28,13 +28,14 @@ function setGeoCode() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName('緯度経度出力');
   const values = sheet.getDataRange().getDisplayValues();
+  const headers = values[0];
   // console.log(values);
 
   const column = {
-    'address': values[0].indexOf('住所'),
-    'latitude': values[0].indexOf('緯度'),
-    'longitude': values[0].indexOf('経度'),
-    'googleMaps': values[0].indexOf('Google Maps Url',)
+    'address': headers.indexOf('住所'),
+    'latitude': headers.indexOf('緯度'),
+    'longitude': headers.indexOf('経度'),
+    'googleMaps': headers.indexOf('Google Maps Url',)
   }
 
   values.forEach((record, index) => {
@@ -54,6 +55,13 @@ function setGeoCode() {
 
 
 
+/**
+ * 住所から緯度、経度、Google MapsのURLを取得する。
+ *
+ * @param {string} address 住所
+ * @return {object} 緯度、経度、Google MapsのURL
+ *
+ */
 function getGeoData_(address) {
   const maps = Maps.newGeocoder()
   .setLanguage("ja")
